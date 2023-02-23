@@ -12,8 +12,41 @@
 </head>
 <body>
     
-    <div id="app">
-        <h1>{{title}}</h1>
+    <div id="app" :class="['container-sm']">
+
+        <div class="alert alert-dark alert-content-center">
+            <div class="container-fluid">
+              <h1 class="text-center">{{title}}</h1>
+            </div>
+        </div>
+
+        <nav :class="['nav','justify-content-center']">
+            <a class="nav-link active" aria-current="page" href="#">start</a>
+            <a class="nav-link" href="#">images</a>
+            <a class="nav-link" href="#">share</a>
+        </nav>
+
+
+        <div class="alert alert-primary" v-for="(item,index) of listAccordion">
+            <strong>{{index}}  {{item}}:</strong> {{textAccordion[index]}}
+        </div>
+        
+        <div class="accordion" id="accordionInitial">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  CLICK HERE
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the body.</strong> content.
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        
     </div>
     
     <!--BOOTSTRAP JS-->
